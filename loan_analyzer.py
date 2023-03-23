@@ -18,6 +18,8 @@ loan_costs = [500, 600, 200, 1000, 450]
 # @TODO: Use the `len` function to calculate the total number of loans in the list.
 # Print the number of loans from the list
 # YOUR CODE HERE!
+
+#total loan variable
 total_loans = len(loan_costs)
 print(total_loans)
 
@@ -25,6 +27,8 @@ print(total_loans)
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 # YOUR CODE HERE!
+
+#total_loans_value variable
 total_loans_value = sum(loan_costs)
 print(total_loans_value)
 
@@ -32,6 +36,8 @@ print(total_loans_value)
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
 # Print the average loan amount
 # YOUR CODE HERE!
+
+#average_loan_amount variable
 average_loan_amount = total_loans_value/total_loans
 print(average_loan_amount)
 
@@ -89,6 +95,7 @@ print(f"Fair Value = {fair_value}")
 #    Else, the present value of the loan is less than the loan cost, then print a message that says that the loan is too expensive and not worth the price.
 # YOUR CODE HERE!
 
+#Present value condition
 if fair_value >= loan.get("loan_price"):
     print("The loan is worth at least the cost to buy it.")
 else:
@@ -212,7 +219,12 @@ output_path = Path("inexpensive_loans.csv")
 with open(output_path, 'w', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
     
+    #header implementation
     csvwriter.writerow(header)
     
+    #introduce row data
     for row in inexpensive_loans:
         csvwriter.writerow(row.values())
+
+# Considering the instructions essentially comment in detail the intended actions needed, I refrained from over commenting
+# details that would seem redundant.
